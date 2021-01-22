@@ -8,7 +8,7 @@ Install the dependencies and start the app.
 ```sh
 $ git clone 
 $ npm install 
-$ jest test 
+$ npm test 
 $ npm start
 
 ```
