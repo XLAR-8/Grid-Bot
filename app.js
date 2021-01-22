@@ -7,11 +7,15 @@ const rl = readline.createInterface({
     output: process.stdout,
     terminal: false
 });
-rl.setPrompt('> ');
-rl.prompt();
+
 
 bott = new bot(1, 1);
-
+console.log(" Enter for move: MOVE>path(ex: MOVE>FRRLF)",'\n',
+            "Enter for shortespath: ShortPath>(ex: shortpath>5,4 )", '\n',
+            "Enter for quiting: QUIT",'\n');
+    
+rl.setPrompt('> ');
+rl.prompt();
 rl.on('line', (input) => {
     matcher(input, data => {
         switch (data.intent) {
@@ -19,13 +23,13 @@ rl.on('line', (input) => {
                 let cordinates = bott.move(input.split(">")[1]);
                 if (typeof cordinates === 'string')
                     console.log("Bot has gone out of grid");
-                else 
+                else
                     console.log("Bot has reached " + cordinates[0] + "," + cordinates[1]);
                 rl.prompt();
                 break;
             case 'ShortPath':
                 let stepsToFollow = bott.shortPath(input.split(">")[1]);
-                console.log(stepsToFollow);  
+                console.log(stepsToFollow);
                 rl.prompt();
                 break;
             case 'Quit':
