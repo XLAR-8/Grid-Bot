@@ -5,6 +5,10 @@ const patternDictionary = [{
   pattern: '\\b(shortpath)\\b',
   intent: 'ShortPath'
 },{
+  pattern: '\\b(relocate)\\b',
+  intent: 'Relocate'
+}
+,{
   pattern: '\\b(move)\\b',
   intent: 'Move'
 } ];

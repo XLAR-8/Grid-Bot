@@ -10,6 +10,20 @@ class Bot {
         this.originX = 0;
         this.originY = 0;
     }
+  
+  relocatebot(cords) { 
+        
+        var splitted = cords.split(",");
+        //console.log(splitted[0]);
+        this.x = splitted[0]
+        this.y = splitted[1];
+        
+        if (this.x > this.maxRow || this.y > this.maxCol || this.x <= this.originX || this.y <= this.originY) {
+            return "Botout";
+            }
+        else 
+            return "done";    
+      }
 
     move(steps) {
 
