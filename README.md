@@ -19,3 +19,4 @@ $ npm start
 
  >to find shortest path: shortpath>x,y
 
+ >to relocate bot: Relocate>x,y
